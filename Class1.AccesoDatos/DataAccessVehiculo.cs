@@ -16,6 +16,9 @@ namespace Class1.AccesoDatos
 
         public static bool AgregarCategoriaVehiculo(CategoriasVehiculos pCategoriaVehiculo)
         {
+            if (contadorCategoriasVehiculos >= ArregloCategoriasVehiculos.Length)
+                throw new Exception("No se pueden registrar más Categorias de Vehículos. Arreglo lleno.");
+
             ArregloCategoriasVehiculos[contadorCategoriasVehiculos] = pCategoriaVehiculo;
             contadorVehiculos++;
             return true;
@@ -33,6 +36,9 @@ namespace Class1.AccesoDatos
 
         public static bool AgregarVehiculo(Vehiculos pVehiculo)
         {
+            if (contadorVehiculos >= ArregloVehiculos.Length)
+                throw new Exception("No se pueden registrar más vehículos. Arreglo lleno.");
+
             ArregloVehiculos[contadorVehiculos] = pVehiculo;
             contadorVehiculos++;
             return true;

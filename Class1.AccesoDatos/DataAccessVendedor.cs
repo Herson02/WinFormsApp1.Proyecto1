@@ -16,6 +16,8 @@ namespace Class1.AccesoDatos
 
         public static bool AgregarEmpleado(Vendedor pVendedor)
         {
+            if (contadorVendedor >= ArregloVendedores.Length)
+                throw new Exception("No se pueden registrar más vendedores. Arreglo lleno.");
             ArregloVendedores[contadorVendedor] = pVendedor;
             contadorVendedor++;
             return true;

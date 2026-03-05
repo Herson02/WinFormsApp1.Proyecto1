@@ -16,6 +16,9 @@ namespace Class1.AccesoDatos
 
         public static bool AgregarVehiculosxSucursal(VehiculoxSucursal pVehiculoxSucursal)
         {
+            if (contadorVehiculoxSucursal >= ArregloVehiculosxSucursal.Length)
+                throw new Exception("No se pueden registrar más vehículos por sucursal. Arreglo lleno.");
+
             ArregloVehiculosxSucursal[contadorVehiculoxSucursal] = pVehiculoxSucursal;
             contadorVehiculoxSucursal++;
             return true;

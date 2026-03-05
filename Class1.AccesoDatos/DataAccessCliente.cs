@@ -16,6 +16,9 @@ namespace Class1.AccesoDatos
 
         public static bool AgregarCliente(Cliente pCliente)
         {
+            if (contadorCliente >= ArregloClientes.Length)
+                throw new Exception("No se pueden registrar más clientes. Arreglo lleno.");
+
             ArregloClientes[contadorCliente] = pCliente;
             contadorCliente++;
             return true;

@@ -16,6 +16,9 @@ namespace Class1.AccesoDatos
 
         public static bool AgregarSucursal(Sucursal pSucursal)
         {
+            if (contadorSucursal >= ArregloSucursales.Length)
+                throw new Exception("No se pueden registrar más Sucursales. Arreglo lleno.");
+
             ArregloSucursales[contadorSucursal] = pSucursal;
             contadorSucursal++;
             return true;
